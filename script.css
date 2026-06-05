@@ -1,0 +1,367 @@
+/*
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: FILMES
+Aluno 1: Andresa Cristina Najarro de Campos - RA: 251538
+Aluno 2: Nome completo - RA: XXXXX
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+*/
+
+:root {
+    --ticket-dark: #3E2723;
+    --ticket-medium: #6F4E37;
+    --ticket-light: #C4A484;
+    --ticket-accent: #D2B48C;
+    --ticket-center: #F5F5dc;
+    --ticket-gold: #d4af37;
+    --text-dark: #2c2416;
+    --text-light: #f3f3f3;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ticket-center);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;  
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+/*Header e Navegação */
+
+header {
+    background: #161515;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    color: var(--ticket-gold);
+    font-size: 28px;
+
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--ticket-medium);
+    letter-spacing: 1px;
+
+}
+
+.logo-text span {
+    color: var(--ticket-gold)
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--ticket-medium);
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: all;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--ticket-gold);
+    transition: widtch 0.3s ease;
+
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+
+}
+
+.btn-primary {
+    background: var(--ticket-medium);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--ticket-dark);
+    transform: translateY(-3px); /* Faz o botão subir 3 pixels */
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white; 
+    border: 2px solid #e0a96d; 
+}
+
+.btn-secondary:hover {
+    background: rgba(111, 78, 55, 0.15); 
+    transform: translateY(-3px); 
+    color: #e0a96d; 
+}
+
+/* Organização da sua área nova baseada no seu layout */
+.hero-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* Garante que o bloco de texto não fique espremido */
+.hero-text-block {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Estilização dos seus textos para o fundo claro */
+.hero-subtitle {
+    color: #6f4e37; /* Marrom dos seus botões */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: rgba(255, 170, 0, 0.745);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    color: #8d8b8b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Controla o tamanho ideal da sua imagem na tela */
+.hero-img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero-img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    
+    /* 💡 O TRUQUE DO BLUR ATRÁS COMO SOMBRA: */
+    /* Sintaxe: drop-shadow(deslocamento-X deslocamento-Y tamanho-do-blur cor) */
+    filter: drop-shadow(0px 0px 25px rgba(224, 169, 109, 0.6)); 
+    
+    transition: filter 0.3s ease;
+}
+
+/* Opcional: Se quiser que o brilho/blur aumente quando passar o mouse */
+.hero-img:hover {
+    filter: drop-shadow(0px 0px 35px rgba(224, 169, 109, 0.9));
+}
+
+/* Garante o fundo escuro integrado na seção de filmes e os textos claros */
+.Filmes {
+    background-color: #161515;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+/* Força os textos da introdução a ficarem brancos e legíveis */
+.Filmes .section-title {
+    color: #e0a96d; /* Dourado */
+}
+
+.Filmes .secion-desc {
+    color: #b3b3b3; /* Cinza claro confortável */
+}
+
+/* Efeito nas capas dos filmes para o usuário saber que dá para clicar */
+.filme-capa {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 100%;
+    height: 380px; /* Mantém todas as capas do mesmo tamanho na linha */
+    object-fit: cover; /* Não deixa a foto esticar ou achatar */
+}
+
+/* Efeito visual ao passar o mouse na capa */
+.filme-capa:hover {
+    transform: scale(1.03); /* Dá um leve zoom elegante */
+    filter: brightness(1.1); /* Deixa a imagem ligeiramente mais brilhante */
+}
+/* Isso aqui é o que vai forçar um filme a ficar do lado do outro */
+.filmes-grid {
+    display: flex !important; /* O !important garante que nenhuma outra regra do Bootstrap atrapalhe */
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+    margin-top: 40px;
+}
+
+.filmes-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filme-btn-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.filmes-capa {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.filmes-capa:hover {
+    transform: scale(1.03);
+}
+
+.filmes-resumo-box {
+    background-color: #222121;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.filmes-resumo-titulo {
+    color: #e0a96d;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.filmes-resumo-texto {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Container que segura todos os filmes */
+.galeria-filmes {
+    display: flex;
+    flex-wrap: wrap;         /* Permite ir para a linha de baixo se acabar o espaço */
+    justify-content: center; /* Centraliza a fileira na tela */
+    gap: 24px;               /* Dá um espaçamento automático entre os cards */
+    padding: 20px;
+    width: 100%;
+}
+
+/* O card de cada filme individual */
+.filme-card {
+    width: 300px;            /* Largura fixa para todos ficarem iguais */
+    flex: 0 0 auto;          /* Impede que o card estique ou mude de tamanho */
+}
+
+/* Garante que a imagem preencha o card certinho */
+.filme-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+/* O container que abraça todos os itens */
+.fileira-container {
+    display: flex;           /* Ativa o Flexbox e coloca os itens lado a lado */
+    flex-wrap: wrap;         /* Se não couber tudo na tela (ex: celular), joga o resto para baixo */
+    justify-content: center; /* Centraliza a fileira na tela */
+    gap: 20px;               /* Cria um espaçamento automático entre os itens */
+    width: 100%;             /* Garante que o container use todo o espaço disponível */
+}
+
+/* Os itens individuais (cards, imagens, caixas, etc.) */
+.fileira-item {
+    flex: 0 0 auto;          /* Impede que o item estique ou mude de tamanho bizarro */
+    width: 300px;            /* Defina a largura exata que você quer para cada um */
+}
+
+/* Força a criação de uma grade onde os itens ficam lado a lado */
+.fileira-container {
+    display: grid !important;
+    /* Cria colunas automáticas de 300px. Se não couber na tela, joga para baixo */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important; /* Espaço entre eles */
+    width: 100% !important;
+    max-width: 1200px; /* Limita o tamanho máximo para não espalhar demais */
+    margin: 0 auto; /* Centraliza o bloco todo na tela */
+}
+
+/* Garante que os itens respeitem o tamanho da grade */
+.fileira-item {
+    width: 100% !important;
+}
