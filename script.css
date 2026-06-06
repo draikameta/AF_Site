@@ -149,7 +149,7 @@ nav a:hover:after {
 
 .btn-secondary {
     background: transparent;
-    color: white; 
+    color: rgb(255, 255, 255); 
     border: 2px solid #e0a96d; 
 }
 
@@ -365,3 +365,391 @@ nav a:hover:after {
 .fileira-item {
     width: 100% !important;
 }
+
+/*
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: Música (SoundWave Arena)
+Aluno 1: Nome completo - RA: XXXXX
+Aluno 2: Nome completo - RA: XXXXX
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+*/
+
+:root {
+    --cor-primaria: #6f42c1;
+    --cor-secundaria: #1f1f23;
+    --cor-gradiente-fim: #d63384;
+    --cor-clara: #f8f9fa;
+    --cor-escura: #121214;
+    --bg-card-dark: #2a2a2e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    line-height: 1.6;
+    padding-top: 56px; /* Evita que o menu fixo cubra conteúdo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* CARROSSEL AJUSTE DE IMAGEM */
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+/* EFEITOS REQUISITADOS: GRADIENTES E ANIMAÇÕES */
+.titulo-gradiente {
+    background: var(--ticket-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.btn-gradiente {
+    background: var(--ticket-accent);
+    color: rgb(0, 0, 0);
+    border: var(--cor-escura);
+    transition: opacity 0.2s ease;
+}
+
+.btn-gradiente:hover {
+    color: var(--ticket-accent);
+    opacity: 0.9;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animado {
+    animation: aparecer 0.8s ease forwards;
+}
+
+/* CARDS E HOVER EFFECTS */
+.card-personalizado {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-personalizado:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card-personalizado img {
+    transition: transform 0.4s ease;
+}
+
+.card-personalizado:hover img {
+    transform: scale(1.03);
+}
+
+/* FLEXBOX REQUISITO OBRIGATÓRIO (APLICADO EM 2 PONTOS) */
+/* PONTO FLEX 1: Elementos internos das caixas informativas */
+.info-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* PONTO FLEX 2: Rodapé padronizado estruturado em linhas flex */
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: #e1e1e6;
+    padding: 40px 15px;
+    border-top: 4px solid var(--cor-primaria);
+}
+
+/* BOTÃO DE VOLTAR AO TOPO (REQUISITO JS) */
+.btn-topo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: none;
+    z-index: 999;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ticket-accent);
+    color: rgb(255, 253, 253);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: opacity 0.2s ease;
+}
+
+.btn-topo.mostrar {
+    display: block;
+}
+
+/* CONFIGURAÇÃO DO MODO TEMA ESCURO (ACIONADO PELO JS) */
+:root {
+    --cor-primaria: #6f42c1;
+    --cor-secundaria: #151518; /* Tom mais escuro para o rodapé */
+    --cor-gradiente-fim: #d63384;
+    --cor-clara: #1f1f23;     /* Agora o fundo padrão do site é escuro */
+    --cor-escura: #f8f9fa;    /* O texto padrão agora é claro */
+    --bg-card-dark: #2a2a2e;  /* Cor para os cards e formulários se destacarem */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    line-height: 1.6;
+    padding-top: 56px;
+}
+
+/* Força as seções, containers alternativos, cards e formulários a adotarem o visual escuro */
+.bg-light-custom, .bg-light {
+    background-color: #1a1a1e !important;
+}
+
+.card {
+    background-color: var(--bg-card-dark) !important;
+    color: #f8f9fa !important;
+}
+
+.card-text, .text-muted {
+    color: #c2c2c2 !important;
+}
+
+/* Garante o contraste dos botões de filtro na galeria */
+.btn-outline-dark {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-outline-dark:hover {
+    background-color: #f8f9fa;
+    color: #121214;
+}
+
+/* Garante que o botão Limpar do formulário fique sempre visível no fundo escuro */
+button[type="reset"] {
+    color: #f8f9fa !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background-color: transparent;
+}
+
+button[type="reset"]:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #e0a96d;
+            font-weight: bold;
+        }
+
+        /* FILEIRA DAS SAGAS */
+        .galeria-sagas {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 30px !important;
+            width: 100% !important;
+            max-width: 1400px;
+            margin: 0 auto 50px auto !important;
+        }
+
+        /* CARD DA SAGA PRINCIPAL */
+        .saga-card {
+            width: 320px !important; /* Um pouco maior que o card comum para dar destaque */
+            flex: 0 0 auto !important;
+            position: relative;
+        }
+
+        .saga-card img {
+            width: 100% !important;
+            height: 450px !important;
+            object-fit: cover !important;
+            transition: transform 0.2s ease;
+        }
+
+        .saga-card img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* 🚀 FILEIRA DOS FILMES DENTRO DA SAGA (Aparece ao clicar) */
+        .filmes-revelados {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            width: 100% !important;
+            background-color: #1c1b1b;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid #2c2b2b;
+        }
+
+        /* MINI CARDS DOS FILMES DA SAGA */
+        .mini-filme-card {
+            width: 200px !important; /* Menores para caberem vários na mesma linha */
+            flex: 0 0 auto !important;
+            text-align: center;
+        }
+
+        .mini-filme-card img {
+            width: 100% !important;
+            height: 280px !important;
+            object-fit: cover !important;
+            border-radius: 6px;
+        }
+
+        .mini-filme-card p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #e0a96d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+/*Sagas*/
+
+<title>Sagas - Tom Cruise</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        h2 {
+    text-align: center !important; 
+    margin-top: 50px;             
+    margin-bottom: 40px;          
+    color: #e0a96d;
+    font-weight: bold;
+}
+
+        /* FILEIRA DAS SAGAS (Garante o lado a lado perfeito) */
+        .galeria-sagas {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 30px !important;
+            width: 100% !important;
+            max-width: 1400px;
+            margin: 0 auto 50px auto !important;
+        }
+
+        /* CARD DA SAGA PRINCIPAL */
+        .saga-card {
+            width: 320px !important; 
+            flex: 0 0 auto !important;
+        }
+
+        .saga-card img {
+            width: 100% !important;
+            height: 450px !important;
+            object-fit: cover !important;
+            transition: transform 0.2s ease;
+        }
+
+        .saga-card img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* FILEIRA DOS FILMES REVELADOS */
+        .filmes-revelados {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            width: 100% !important;
+            background-color: #1c1b1b;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-bottom: 60px; /* Espaço no fundo para a rolagem ficar confortável */
+            border: 1px solid #2c2b2b;
+        }
+
+        /* MINI CARDS DOS FILMES */
+        .mini-filme-card {
+            width: 200px !important; 
+            flex: 0 0 auto !important;
+            text-align: center;
+        }
+
+        .mini-filme-card img {
+            width: 100% !important;
+            height: 280px !important;
+            object-fit: cover !important;
+            border-radius: 6px;
+        }
+
+        .mini-filme-card p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #e0a96d;
+            font-weight: bold;
+        }
+    </style>
+
