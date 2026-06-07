@@ -1,131 +1,284 @@
-<!--
-AF - Avaliação Final - Linguagens de Programação
-Tema do Projeto: FILMES
-Aluno 1: Andresa Cristina Najarro de Campos - RA: 251538
-Aluno 2: Nome completo - RA: XXXXX
-Professor: Abimael de Oliveira
-Data de entrega: 07/06
--->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmografia Tom Cruise - Entre em Contato</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Contato - Tom Cruise Filmografia</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilização Artística - Tema Cinema Dark */
+        body {
+            padding-top: 80px; 
+            background-color: #121212; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .text-gold {
+            color: #ffc107;
+            text-shadow: 0px 0px 10px rgba(255, 193, 7, 0.3);
+        }
+        
+        .text-muted {
+            color: #ffffff !important;
+        }
+        
+        .card-dark {
+            background-color: #1e1e1e;
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        .form-control, .form-select {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+        }
+        .form-control:focus, .form-select:focus {
+            background-color: #333;
+            border-color: #ffc107;
+            color: #fff;
+            box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+        }
+        .form-control::placeholder {
+            color: #777;
+        }
+        .form-label {
+            color: #ffffff; 
+            font-weight: 500;
+        }
+
+        .btn-gold {
+            background-color: #ffc107;
+            color: #121212;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #ffcd39;
+            color: #121212;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+        }
+        .btn-outline-light:hover {
+            color: #121212;
+        }
+
+        .social-icons a {
+            font-size: 1.6rem;
+            color: #ffffff; 
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+        .social-icons a:hover {
+            color: #ffc107;
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        /* Estilo customizado para o Pop-up (Modal) se manter no tema dark */
+        .modal-content-dark {
+            background-color: #1e1e1e;
+            border: 2px solid #ffc107;
+            color: #fff;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand titulo-gradiente" href="">Entre em Contato</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- 🧭 MENU PADRONIZADO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand text-gold fw-bold" href="index.html">CRUISE CINEMA</a>
 
-    <main class="container my-5 pt-4">
-        <section class="contato-header text-center mb-5 animado">
-            <h1 class="display-4 fw-bold">Nos mande uma mensagem!
-            <p class="lead text-muted">Quer nos deixar um recado? Preencha o formulário e nos escreva!</p>
-        </section>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-gold" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container my-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-12">
+                <span class="badge bg-warning text-dark mb-2 text-uppercase fw-bold tracking-wider">Missão de Contato</span>
+                <h1 class="display-4 fw-bold text-gold">Contate o Diretor</h1>
+                <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                    Sua mensagem não se auto-destruirá! Deixe suas impressões sobre os maiores successes do Tom Cruise, 
+                    sugira novos clássicos ou envie propostas de parcerias com o nosso QG de Cinema.
+                </p>
+            </div>
+        </div>
 
         <div class="row g-5">
-            <section class="col-lg-6">
-                <div class="bg-light p-4 rounded shadow-sm">
-                    <h2 class="h4 mb-4">Enviar Mensagem</h2>
-                    <form id="formContato" class="form-contato" action="#" method="post">
+            <!-- COLUNA DO FORMULÁRIO -->
+            <div class="col-lg-7">
+                <div class="card-dark p-4 p-sm-5">
+                    <h3 class="h4 mb-4 text-white border-bottom border-secondary pb-2">
+                        <i class="fa-regular fa-paper-plane me-2 text-gold"></i>Formulário de Mensagem
+                    </h3>
+                    
+                    <form id="meuFormulario" class="form-contato" action="#" method="post">
+                        
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome completo:</label>
-                            <input type="text" id="nome" name="nome" class="form-control" required minlength="3">
+                            <input type="text" id="nome" name="nome" class="form-control" required placeholder="Ex: Pete 'Maverick' Mitchell">
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail:</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="maverick@topgun.com">
                         </div>
 
                         <div class="mb-3">
                             <label for="telefone" class="form-label">Telefone:</label>
-                            <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(15) 99999-9999" pattern="\[0-9]{2}\ \s[0-9]{4,5}-[0-9]{4}">
-                            <div class="form-text">Formato: (15) 99999-9999</div>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" 
+                                   placeholder="(15) 99999-9999" 
+                                   pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
+                                   title="Formato esperado: (00) 00000-0000" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="assunto" class="form-label">Por onde conheceu nosso site?:</label>
+                            <label for="assunto" class="form-label">Assunto:</label>
                             <select id="assunto" name="assunto" class="form-select" required>
                                 <option value="">Selecione uma opção</option>
-                                <option value="duvida">Redes Sociais</option>
-                                <option value="imprensa">Amigos / Família</option>
-                                <option value="parceria"> Busca de fã</option>
+                                <option value="duvida">Dúvida sobre Filmes</option>
+                                <option value="orcamento">Orçamento Cinematográfico</option>
+                                <option value="parceria">Parceria de Conteúdo</option>
+                                <option value="critica">Crítica de Filme</option>
                             </select>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="mensagem" class="form-label">Mensagem:</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required></textarea>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required placeholder="Sua mensagem começa aqui..."></textarea>
                         </div>
 
                         <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-gradiente px-4">Enviar Formulário</button>
-                            <button type="reset" class="btn btn-secondary px-4">Limpar</button>
-                            
+                            <button type="submit" class="btn btn-gold px-4 py-2">Enviar Dados</button>
+                            <button type="reset" class="btn btn-outline-light px-4 py-2">Limpar Tudo</button>
                         </div>
                     </form>
                 </div>
-            </section>
+            </div>
 
-            <section class="col-lg-6 d-flex flex-column justify-content-between">
-                <div class="bg-dark text-white p-4 rounded shadow-sm mb-4 info-flex-container">
-                    <h2 class="h4 mb-3">Informações de Contato</h2>
-                    <p class="mb-2">📍 <strong>Endereço:</strong> Av. Engenheiro Carlos Reinaldo Mendes, 2015 - Alto da Boa Vista, Sorocaba - SP</p>
-                    <p class="mb-2">📞 <strong>Telefone:</strong> (15) 3238-1188</p>
-                    <p class="mb-3">✉ <strong>E-mail:</strong> contato@soundwavearena.com.br</p>
-                    <hr class="bg-light">
-                    <div class="redes-sociais d-flex gap-3 mt-2">
-                        <a href="#" class="text-white text-decoration-none fw-bold">Instagram</a> •
-                        <a href="#" class="text-white text-decoration-none fw-bold">YouTube</a> •
-                        <a href="#" class="text-white text-decoration-none fw-bold">Hbo</a>
+            <!-- COLUNA DE INFORMAÇÕES E MAPA -->
+            <div class="col-lg-5">
+                <div class="card-dark p-4 mb-4 text-light">
+                    <h3 class="h4 mb-4 text-gold border-bottom border-secondary pb-2">
+                        <i class="fa-solid fa-location-dot me-2"></i>Nosso QG
+                    </h3>
+                    
+                    <p class="mb-3">
+                        <strong>Endereço Oficial:</strong><br>
+                        <span class="text-muted">
+                            Rodovia Senador José Ermírio de Moraes, 1425<br>
+                            Jardim Constantino Matucci<br>
+                            Sorocaba - SP, CEP 18085-784
+                        </span>
+                    </p>
+                    
+                    <p class="mb-3">
+                        <strong>Telefone de Contato:</strong><br>
+                        <span class="text-muted">(15) 3238-1188</span>
+                    </p>
+                    
+                    <p class="mb-4">
+                        <strong>E-mail de Suporte:</strong><br>
+                        <span class="text-muted">contato@facens.br</span>
+                    </p>
+
+                    <div class="pt-3 border-top border-secondary">
+                        <h5 class="h6 mb-3 text-uppercase text-warning">Redes da Agência</h5>
+                        <div class="social-icons">
+                            <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                
-            </section>
-        </div>
-    </main>
-
-    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">↑</button>
-
-    <footer class="rodape">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-md-start text-center">
-                    <h5> Filmografia - Tom Cruise </h5>
-                    <p class="mb-0">Projeto desenvolvido para a AF - Linguagens de Programação.</p>
-                    <p class="small text-muted">Facens | Prof. Abimael de Oliveira | Junho de 2026</p>
-                </div>
-                <div class="col-md-6 text-md-end text-center mt-3 mt-md-0">
-                    <p class="mb-1"><strong>Integrantes:</strong></p>
-                    <p class="mb-0 small">Aluno 1: Andresa Cristina Najarro de Campos - RA: 251538</p>
-                    <p class="mb-0 small">Aluno 2: Nome completo - RA: XXXXX</p>
-                    <p class="mt-2 small text-muted mb-0">© 2026 - Fins Educacionais.</p>
+                <!-- 🗺️ IFRAME ATUALIZADO COM O LINK DE INCORPORAÇÃO CORRETO DA FACENS -->
+                <div class="map-container" style="height: 295px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.834714156671!2d-47.427503700000005!3d-23.4664567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f532675a6117%3A0x89ee1871239aa8a!2sFacens%20-%20Faculdade%20de%20Engenharia%20de%20Sorocaba!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
+    </main>
+
+    <!-- POP-UP DE CONFIRMAÇÃO (MODAL BOOTSTRAP) -->
+    <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-dark">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-gold" id="modalSucessoLabel">
+                        <i class="fa-solid fa-circle-check me-2"></i>Missão Cumprida!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="fa-solid fa-film text-warning display-4 mb-3"></i>
+                    <p class="fs-5 mb-1">Obrigado pelo seu contato!</p>
+                    <p class="text-muted small">Seus dados foram validados e enviados com sucesso para a nossa base cinematográfica.</p>
+                </div>
+                <div class="modal-footer border-secondary justify-content-center">
+                    <button type="button" class="btn btn-gold px-4" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-black text-muted text-center py-4 mt-auto border-top border-secondary">
+        <p class="mb-0 small">&copy; Cruise Cinema & Facens - Todos os direitos reservados de mentirinha.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- Bootstrap 5 JS Bundle com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT PARA EXIBIR O POP-UP -->
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            var meuModal = new bootstrap.Modal(document.getElementById('modalSucesso'));
+            meuModal.show();
+            this.reset();
+        });
+    </script>
 </body>
 </html>
