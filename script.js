@@ -93,10 +93,21 @@ window.rolarParaSaga = function(idDaSaga) {
     setTimeout(() => {
         const elemento = document.getElementById(idDaSaga);
         if (elemento) {
-            elemento.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start'      
+            elemento.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     }, 300);
 };
+
+// ----------------------------------------------------
+// FORÇAR O CARROSSEL A FUNCIONAR
+// ----------------------------------------------------
+const myCarouselElement = document.querySelector('#carouselHero');
+if (myCarouselElement) {
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 3000,
+        ride: 'carousel'
+    });
+}
