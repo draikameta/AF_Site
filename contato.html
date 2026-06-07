@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Cinema - Contato</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand text-gold fw-bold" href="index.html">CRUISE CINEMA</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-gold" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 pt-4">
+        
+        <div class="row mb-5 text-center animado">
+            <div class="col-12">
+                <span class="badge bg-warning text-dark mb-2 text-uppercase fw-bold">Missão de Contato</span>
+                <h1 class="display-4 fw-bold text-gold">Contate o Diretor</h1>
+                <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                    Sua mensagem não se auto-destruirá! Deixe suas impressões sobre os maiores sucessos do Tom Cruise, 
+                    sugira novos clássicos ou envie propostas de parcerias com o nosso QG de Cinema.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-5 animado">
+            <div class="col-lg-7">
+                <div class="card-dark p-4 p-sm-5">
+                    <h3 class="h4 mb-4 text-white border-bottom border-secondary pb-2">
+                        <i class="fa-regular fa-paper-plane me-2 text-gold"></i>Formulário de Mensagem
+                    </h3>
+                    
+                    <form id="meuFormulario" class="form-contato" action="#" method="post">
+                        
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome completo:</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required placeholder="Ex: Pete 'Maverick' Mitchell">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="maverick@topgun.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" 
+                                   placeholder="(15) 99999-9999" 
+                                   pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
+                                   title="Formato esperado: (00) 00000-0000" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto:</label>
+                            <select id="assunto" name="assunto" class="form-select" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="duvida">Dúvida sobre Filmes</option>
+                                <option value="orcamento">Orçamento Cinematográfico</option>
+                                <option value="parceria">Parceria de Conteúdo</option>
+                                <option value="critica">Crítica de Filme</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="mensagem" class="form-label">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required placeholder="Sua mensagem começa aqui..."></textarea>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-gold px-4 py-2">Enviar Dados</button>
+                            <button type="reset" class="btn btn-outline-light px-4 py-2 text-white">Limpar Tudo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card-dark p-4 mb-4 text-light">
+                    <h3 class="h4 mb-4 text-gold border-bottom border-secondary pb-2">
+                        <i class="fa-solid fa-location-dot me-2"></i>Nosso QG
+                    </h3>
+                    
+                    <p class="mb-3">
+                        <strong>Endereço Oficial:</strong><br>
+                        <span class="text-muted">
+                            Rodovia Senador José Ermírio de Moraes, 1425<br>
+                            Jardim Constantino Matucci<br>
+                            Sorocaba - SP, CEP 18085-784
+                        </span>
+                    </p>
+                    
+                    <p class="mb-3">
+                        <strong>Telefone de Contato:</strong><br>
+                        <span class="text-muted">(15) 3238-1188</span>
+                    </p>
+                    
+                    <p class="mb-4">
+                        <strong>E-mail de Suporte:</strong><br>
+                        <span class="text-muted">contato@facens.br</span>
+                    </p>
+
+                    <div class="pt-3 border-top border-secondary">
+                        <h5 class="h6 mb-3 text-uppercase text-warning">Redes da Agência</h5>
+                        <div class="social-icons">
+                            <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container" style="height: 295px;">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Facens%20Sorocaba&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-dark">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-gold" id="modalSucessoLabel">
+                        <i class="fa-solid fa-circle-check me-2"></i>Missão Cumprida!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="fa-solid fa-film text-warning display-4 mb-3"></i>
+                    <p class="fs-5 mb-1">Obrigado pelo seu contato!</p>
+                    <p class="text-muted small">Seus dados foram validados e enviados com sucesso para a nossa base cinematográfica.</p>
+                </div>
+                <div class="modal-footer border-secondary justify-content-center">
+                    <button type="button" class="btn btn-gold px-4" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center">
+                    <h5 class="text-gold">Cruise Cinema</h5>
+                    <p class="mb-0">Projeto desenvolvido para a AF - Linguagens de Programação.</p>
+                    <p class="small text-muted">Facens | Prof. Abimael de Oliveira | Junho de 2024</p>
+                </div>
+                <div class="col-md-6 text-md-end text-center mt-3 mt-md-0">
+                    <p class="mb-1"><strong>Integrantes:</strong></p>
+                    <p class="mb-0 small">Aluno 1: Andresa Cristina Najarro de Campos - RA: 251538</p>
+                    <p class="mb-0 small">Aluno 2: Nome completo - RA: XXXXX</p>
+                    <p class="mt-2 small text-muted mb-0">© 2024 - Fins Educacionais.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
